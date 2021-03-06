@@ -17,5 +17,10 @@ void MainWindow::on_pushButton_clicked()
 {
     QString name;
     name = QFileDialog::getOpenFileName(this, "Select file", "", "PTC file (*.ptc)");
-    qDebug() << name;
+    if(name.size() > 0){
+        string nameFile = name.toStdString();
+        AnalizerLexical analizerLexical = AnalizerLexical();
+        analizerLexical.startScan(nameFile);
+        analizerLexical.printListTokensFinded();
+    }
 }

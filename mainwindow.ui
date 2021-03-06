@@ -43,11 +43,17 @@
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>210</x>
+          <x>190</x>
           <y>140</y>
-          <width>131</width>
+          <width>191</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Verdana</family>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Selecciona el archivo</string>

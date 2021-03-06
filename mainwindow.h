@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 #include <QFileDialog>
 #include <QMainWindow>
-
+#include "analizerlexical.h"
 namespace Ui {
 class MainWindow;
 }

@@ -1,4 +1,5 @@
 #include "token.h"
+#include <sstream>
 
 void Token::setToken(const string &value)
 {
@@ -20,7 +21,15 @@ void Token::setLexema(const string &value)
     lexema = value;
 }
 
-Token::Token()
+string Token::toString() const
 {
+    stringstream ss;
+    ss << "Token : " << token << " valor: " << lexema << endl;
+    return ss.str();
+}
 
+Token::Token(const string &token, const string &lexema)
+{
+    this->token = token;
+    this->lexema = lexema;
 }

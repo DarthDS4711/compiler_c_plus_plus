@@ -1,17 +1,25 @@
 #ifndef ANALIZERLEXICAL_H
 #define ANALIZERLEXICAL_H
 #include <vector>
+#include <cstring>
 #include "token.h"
-#include "language.h"
-class analizerLexical
+#include "handlefile.h"
+#include "afd.h"
+class AnalizerLexical
 {
 private:
     vector<Token> listTokensFinded;
-    Language chainsValidate;
+    vector<string> linesFile;
+    AFD automata;
     bool statusToken(const char &lexima);
+    void scanSourceFile();
+    void scanCurrentLine(const string &line);
 public:
-    analizerLexical();
+    AnalizerLexical();
+    void startScan(const string &nameFile);
     void validateToken(const char &lexima);
+    void printListTokensFinded();
+
 };
 
 #endif // ANALIZERLEXICAL_H

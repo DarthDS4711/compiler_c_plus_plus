@@ -27,7 +27,7 @@ CONFIG += c++11
 SOURCES += \
         afd.cpp \
         analizerlexical.cpp \
-        language.cpp \
+        handlefile.cpp \
         main.cpp \
         mainwindow.cpp \
         token.cpp
@@ -35,7 +35,7 @@ SOURCES += \
 HEADERS += \
         afd.h \
         analizerlexical.h \
-        language.h \
+        handlefile.h \
         mainwindow.h \
         token.h
 

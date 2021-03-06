@@ -9,12 +9,14 @@ private:
     string token;
     string lexema;
 public:
-    Token();
+    Token(const string &token, const string &lexema);
     void setToken(const string &value);
     string getToken() const;
 
     string getLexema() const;
     void setLexema(const string &value);
+
+    string toString()const;
 };
 
 #endif // TOKEN_H

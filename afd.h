@@ -30,14 +30,29 @@ private:
         state_equal,//33
         state_out = 36,
         state_separator,//37
+        state_equalOrCompare
     };
     int actualState;
     bool isValidState();
-    string lexema;
+    void switchOnStateN0(const char &simbol);
+    void swicthonStateN1(const char &simbol);
+    void switchOnStateN3(const char &simbol);
+    void switchOnStateN6(const char &simbol);
+    void switchOnStateN9ToN12(const char &simbol);
+    void switchOnStateN14ToN15(const char &simbol);
+    void switchOnStateN16ToN17(const char &simbol);
+    void switchOnStateN19ToN21(const char &simbol);
+    void switchOnStateN27(const char &simbol);
+    void switchOnStateN28ToN29(const char &simbol);
+    void switchOnStateN31ToN32(const char &simbol);
+    void switchOnStateN34ToN35(const char &simbol);
 public:
     AFD();
-    void assignamentToken(string &token, string &lexema);
-    void switchState(char &simbol);
+    void assignamentToken(string &token);
+    void assignamentTokenForSimbolOrChainReserved(string &token);
+    void switchState(const char &simbol);
+    int getActualState() const;
+    void setActualState(int value);
 };
 
 #endif // AFD_H
