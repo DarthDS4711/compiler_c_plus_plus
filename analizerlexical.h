@@ -19,6 +19,7 @@ public:
     void startScan(const string &nameFile);
     void validateToken(const char &lexima);
     void printListTokensFinded();
+    void setListTokenOutClass(vector<Token> &listTokens);
 
 };
 

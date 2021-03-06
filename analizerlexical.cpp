@@ -51,3 +51,8 @@ void AnalizerLexical::printListTokensFinded()
         qDebug () << chain;
     }
 }
+
+void AnalizerLexical::setListTokenOutClass(vector<Token> &listTokens)
+{
+    listTokens = this->listTokensFinded;
+}
