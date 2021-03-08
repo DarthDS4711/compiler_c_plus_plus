@@ -55,3 +55,9 @@ void MainWindow::on_pushButton_clicked()
         drawTableTokens(listTokensFinded);
     }
 }
+
+void MainWindow::on_gotToCompilePB_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    //ui->gotToCompilePB->setVisible(false);
+}

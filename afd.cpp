@@ -74,6 +74,9 @@ void AFD::switchOnStateN0(const char &simbol)
     case ',':
         actualState = state_separator;
         break;
+    case '&':
+        actualState = state_operatorReference;
+        break;
     default:
         actualState = -1;
         break;
@@ -178,6 +181,9 @@ void AFD::switchOnStateN16ToN17(const char &simbol)
             break;
         case 'L':
             actualState = 19;
+            break;
+        case 'U':
+            actualState = 39;
             break;
         default:
             actualState = -1;
@@ -288,6 +294,15 @@ void AFD::switchOnStateN34ToN35(const char &simbol)
     }
 }
 
+void AFD::switchOnStateN39(const char &simbol)
+{
+    if(simbol == 'N'){
+        actualState = state_wordDefineFunction;
+    }
+    else
+        actualState = -1;
+}
+
 
 AFD::AFD()
 {
@@ -322,6 +337,10 @@ void AFD::assignamentToken(string &token)
     case state_out: token = "salida por consola"; break;
     case state_separator: token = "simbolo de separacion"; break;
     case state_equalOrCompare: token = "operador comparador igual o menor-mayor"; break;
+    case state_operatorReference: token = "operador referencia variable"; break;
+    case state_wordDefineFunction: token = "Palabra reservada para definir una funcion"; break;
+    default:
+        token = "Token invalido";break;
     }
 }
 
@@ -350,5 +369,6 @@ void AFD::switchState(const char &simbol)
     case 32: switchOnStateN31ToN32(simbol); break;
     case 34:
     case 35: switchOnStateN34ToN35(simbol); break;
+    case 39: switchOnStateN39(simbol); break;
     }
 }

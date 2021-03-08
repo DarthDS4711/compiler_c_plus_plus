@@ -30,7 +30,9 @@ private:
         state_equal,//33
         state_out = 36,
         state_separator,//37
-        state_equalOrCompare
+        state_equalOrCompare,
+        state_wordDefineFunction = 40,
+        state_operatorReference
     };
     int actualState;
     bool isValidState();
@@ -46,10 +48,10 @@ private:
     void switchOnStateN28ToN29(const char &simbol);
     void switchOnStateN31ToN32(const char &simbol);
     void switchOnStateN34ToN35(const char &simbol);
+    void switchOnStateN39(const char &simbol);
 public:
     AFD();
     void assignamentToken(string &token);
-    void assignamentTokenForSimbolOrChainReserved(string &token);
     void switchState(const char &simbol);
     int getActualState() const;
     void setActualState(int value);
